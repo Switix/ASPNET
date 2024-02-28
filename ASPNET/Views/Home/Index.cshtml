@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    String[] arr = { "Audi", "BMW", "Ford" };
+}
+
+<div class="text-center">
+    @foreach(var car in arr)
+    {
+        if (car.Equals("BMW"))
+        {
+            <h1 style="color:red;">@car</h1>
+        }
+        else {<h1 class="display-4">@car</h1>}
+    }
+    
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
