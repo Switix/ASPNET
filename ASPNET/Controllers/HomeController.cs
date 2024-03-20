@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ASPNET.DAL;
+using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace ASPNET.Controllers
@@ -6,20 +7,28 @@ namespace ASPNET.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        FilmyContext db;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(FilmyContext db)
         {
-            _logger = logger;
+            this.db = db;
         }
 
+        public IActionResult StronyStatyczne(string nazwa)
+        {
+            return View(nazwa);
+        }
         public IActionResult Index()
         {
-            return View();
+            var kategorie = db.Kategorie.ToList();
+            return View(kategorie);
         }
 
         public IActionResult Privacy()
         {
             return View();
         }
+
+        
     }
 }

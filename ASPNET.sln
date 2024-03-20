@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNET", "ASPNET\ASPNET.csproj", "{6C638E96-032F-4A81-8B2A-0B09416711DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNET", "ASPNET\ASPNET.csproj", "{6C638E96-032F-4A81-8B2A-0B09416711DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

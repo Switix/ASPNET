@@ -6,8 +6,8 @@ namespace ASPNET.DAL
     public class FilmyContext : DbContext
     {
 
-        DbSet<Film> Filmy { get; set; }
-        DbSet<Kategoria> Kategorie { get; set; }
+        public DbSet<Film> Filmy { get; set; }
+        public DbSet<Kategoria> Kategorie { get; set; }
 
         public FilmyContext(DbContextOptions options) : base(options)
         {
