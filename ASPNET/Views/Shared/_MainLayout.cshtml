@@ -8,6 +8,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+    <nav class="navbar px-5 navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Logo</a>
+        @(await Component.InvokeAsync("Menu"))
+    </nav>
 
     <div class="container-fluid p-5 bg-primary text-white text-center">
        @RenderBody()
@@ -37,6 +41,9 @@
         <a href="@Url.Action("StronyStatyczne","Home",new{nazwa = "MetodyPlatnosci"})">Metody płatności</a>
         <a href="@Url.Action("StronyStatyczne","Home",new{nazwa = "Kontakt"})">Kontakt</a>
         <a href="@Url.Action("StronyStatyczne","Home",new{nazwa = "Regulamin"})">Regulamin</a>
+       
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 </body>
 </html>

@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Film>
+@{
+}
+
+<div class="text-center">
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>Tytul</th>
+            <th>Rezyser</th>
+            <th>Opis</th>
+            <th>DataDodania</th>
+        </tr>
+        
+    
+    @foreach (var film in Model)
+    {
+        <tr>
+            <td>@film.Id</td>
+            <td>@film.Tytul</td>
+            <td>@film.Rezyser</td>
+            <td>@film.Opis</td>
+            <td>@film.DataDodania</td>
+        </tr>
+        
+    }
+    </table>
+</div>
