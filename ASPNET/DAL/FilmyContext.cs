@@ -26,7 +26,8 @@ namespace ASPNET.DAL
                 Opis = "Bardzo ciekawy i interesujacy film",
                 Tytul = "Ready Palyer One",
                 Rezyser = "Adam Małysz",
-                KategoriaId = 1
+                KategoriaId = 1,
+                Plakat="readyPlayerOne.jpg"
             },
             new Film()
             {
@@ -36,7 +37,8 @@ namespace ASPNET.DAL
                 Opis = "Film oparty na faktach",
                 Tytul = "Sen na javie",
                 Rezyser = "Miłosz Jacoszek",
-                KategoriaId = 2
+                KategoriaId = 2,
+                Plakat = "senNaJavie.jpg"
             },
             new Film()
             {
@@ -46,7 +48,8 @@ namespace ASPNET.DAL
                 Opis = "Film Dokumentalny",
                 Tytul = "Szybcy i wściekli 21",
                 Rezyser = "Paweł Marciniak",
-                KategoriaId = 3
+                KategoriaId = 3,
+                Plakat = "szybcyIWsciekli.jpg"
             },
             new Film()
             {
@@ -56,7 +59,8 @@ namespace ASPNET.DAL
                 Opis = "Bardzo ciekawy i interesujacy film",
                 Tytul = "Ready Palyer One",
                 Rezyser = "Adam Małysz",
-                KategoriaId = 1
+                KategoriaId = 1,
+                Plakat = "readyPlayerOne.jpg"
             },
             new Film()
             {
@@ -66,7 +70,8 @@ namespace ASPNET.DAL
                 Opis = "Film oparty na faktach",
                 Tytul = "Sen na javie",
                 Rezyser = "Miłosz Jacoszek",
-                KategoriaId = 2
+                KategoriaId = 2,
+                Plakat = "senNaJavie.jpg"
             },
             new Film()
             {
@@ -76,7 +81,8 @@ namespace ASPNET.DAL
                 Opis = "Film Dokumentalny",
                 Tytul = "Szybcy i wściekli 21",
                 Rezyser = "Paweł Marciniak",
-                KategoriaId = 3
+                KategoriaId = 3,
+                Plakat = "szybcyIWsciekli.jpg"
             },
             new Film()
             {
@@ -86,7 +92,8 @@ namespace ASPNET.DAL
                 Opis = "Bardzo ciekawy i interesujacy film",
                 Tytul = "Ready Palyer One",
                 Rezyser = "Adam Małysz",
-                KategoriaId = 1
+                KategoriaId = 1,
+                Plakat = "readyPlayerOne.jpg"
             },
             new Film()
             {
@@ -96,7 +103,8 @@ namespace ASPNET.DAL
                 Opis = "Film oparty na faktach",
                 Tytul = "Sen na javie",
                 Rezyser = "Miłosz Jacoszek",
-                KategoriaId = 2
+                KategoriaId = 2,
+                Plakat = "senNaJavie.jpg"
             },
             new Film()
             {
@@ -106,7 +114,8 @@ namespace ASPNET.DAL
                 Opis = "Film Dokumentalny",
                 Tytul = "Szybcy i wściekli 21",
                 Rezyser = "Paweł Marciniak",
-                KategoriaId = 3
+                KategoriaId = 3,
+                Plakat = "szybcyIWsciekli.jpg"
             },
             new Film()
             {
@@ -116,7 +125,8 @@ namespace ASPNET.DAL
                 Opis = "Bardzo ciekawy i interesujacy film",
                 Tytul = "Ready Palyer One",
                 Rezyser = "Adam Małysz",
-                KategoriaId = 1
+                KategoriaId = 1,
+                Plakat = "readyPlayerOne.jpg"
             }
             );
 

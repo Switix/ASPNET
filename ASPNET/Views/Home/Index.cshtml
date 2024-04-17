@@ -1,14 +1,55 @@
-﻿@model IEnumerable<Kategoria> 
+﻿@model IEnumerable<Film> 
 @{
     ViewData["Title"] = "Home Page";
 
 }
-
-<div class="text-center">
-    @foreach(var kategorie in Model)
+<a class="btn btn-success" href="@Url.Action("DodajFilm","Filmy")">dodaj Film</a>
+<div class="text-center d-flex flex-wrap">
+    @foreach(var film in Model)
     {
-        <p>
-            
-        </p>
+        <div class="film-card">
+            <img src="~/Content/@film.Plakat" alt="@film.Tytul" class="film-poster" />
+            <div class="film-details">
+                <h2>@film.Tytul</h2>
+                <p><strong>Reżyser:</strong> @film.Rezyser</p>
+                <p><strong>Opis:</strong> @film.Opis</p>
+                <p><strong>Cena:</strong> @film.Cena</p>
+                <p><strong>Data dodania:</strong> @film.DataDodania.ToShortDateString()</p>
+            </div>
+        </div>
     }
 </div>
+<style>
+    .film-card {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        margin-bottom: 20px;
+        width:25%;
+    }
+
+    .film-poster {
+        width: 150px;
+        height: 250px;
+    }
+
+    .film-details {
+        padding: 15px;
+    }
+
+        .film-details h2 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+
+        .film-details p {
+            margin: 0;
+            margin-bottom: 10px;
+        }
+
+        .film-details strong {
+            font-weight: bold;
+        }
+</style>

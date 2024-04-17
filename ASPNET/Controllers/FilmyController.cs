@@ -1,4 +1,5 @@
 ﻿using ASPNET.DAL;
+using ASPNET.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -35,9 +36,29 @@ namespace ASPNET.Controllers
         public IActionResult Szczegoly(int idFilmu)
         {
             var film = db.Filmy.Find(idFilmu);
-            var kategoria = db.Kategorie.Find(film.KategoriaId);
             
             return View(film);
+        }
+
+        public IActionResult DodajFilm()
+        {
+            DodawanieFilmu dodaj = new DodawanieFilmu();
+
+            var kategorie = db.Kategorie.ToList();
+
+            dodaj.Kategorie = kategorie;
+
+            return View(dodaj);
+        }
+
+        public IActionResult DodajFilm(DodawanieFilmu obj)
+        {
+            obj.Film.DataDodania = DateTime.Now;
+
+            db.Add(obj.Film);
+            db.SaveChanges();   
+
+            return RedirectToAction("DodajFilm");
         }
     }
 }

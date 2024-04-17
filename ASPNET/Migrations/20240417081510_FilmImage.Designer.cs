@@ -4,6 +4,7 @@ using ASPNET.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ASPNET.Migrations
 {
     [DbContext(typeof(FilmyContext))]
-    partial class FilmyContextModelSnapshot : ModelSnapshot
+    [Migration("20240417081510_FilmImage")]
+    partial class FilmImage
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -67,10 +69,10 @@ namespace ASPNET.Migrations
                         {
                             Id = 1,
                             Cena = 12.36m,
-                            DataDodania = new DateTime(2024, 4, 17, 10, 31, 37, 320, DateTimeKind.Local).AddTicks(1798),
+                            DataDodania = new DateTime(2024, 4, 17, 10, 15, 10, 477, DateTimeKind.Local).AddTicks(7328),
                             KategoriaId = 1,
                             Opis = "Bardzo ciekawy i interesujacy film",
-                            Plakat = "readyPlayerOne.jpg",
+                            Plakat = "Content/readyPlayerOne.jpg",
                             Rezyser = "Adam Małysz",
                             Tytul = "Ready Palyer One"
                         },
@@ -81,7 +83,7 @@ namespace ASPNET.Migrations
                             DataDodania = new DateTime(2024, 3, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             KategoriaId = 2,
                             Opis = "Film oparty na faktach",
-                            Plakat = "senNaJavie.jpg",
+                            Plakat = "Content/senNaJavie.jpg",
                             Rezyser = "Miłosz Jacoszek",
                             Tytul = "Sen na javie"
                         },
@@ -92,7 +94,7 @@ namespace ASPNET.Migrations
                             DataDodania = new DateTime(2023, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             KategoriaId = 3,
                             Opis = "Film Dokumentalny",
-                            Plakat = "szybcyIWsciekli.jpg",
+                            Plakat = "Content/szybcyIWsciekli.jpg",
                             Rezyser = "Paweł Marciniak",
                             Tytul = "Szybcy i wściekli 21"
                         },
@@ -103,7 +105,7 @@ namespace ASPNET.Migrations
                             DataDodania = new DateTime(2024, 11, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             KategoriaId = 1,
                             Opis = "Bardzo ciekawy i interesujacy film",
-                            Plakat = "readyPlayerOne.jpg",
+                            Plakat = "Content/readyPlayerOne.jpg",
                             Rezyser = "Adam Małysz",
                             Tytul = "Ready Palyer One"
                         },
@@ -114,7 +116,7 @@ namespace ASPNET.Migrations
                             DataDodania = new DateTime(2023, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             KategoriaId = 2,
                             Opis = "Film oparty na faktach",
-                            Plakat = "senNaJavie.jpg",
+                            Plakat = "Content/senNaJavie.jpg",
                             Rezyser = "Miłosz Jacoszek",
                             Tytul = "Sen na javie"
                         },
@@ -125,7 +127,7 @@ namespace ASPNET.Migrations
                             DataDodania = new DateTime(2023, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             KategoriaId = 3,
                             Opis = "Film Dokumentalny",
-                            Plakat = "szybcyIWsciekli.jpg",
+                            Plakat = "Content/szybcyIWsciekli.jpg",
                             Rezyser = "Paweł Marciniak",
                             Tytul = "Szybcy i wściekli 21"
                         },
@@ -136,7 +138,7 @@ namespace ASPNET.Migrations
                             DataDodania = new DateTime(2023, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             KategoriaId = 1,
                             Opis = "Bardzo ciekawy i interesujacy film",
-                            Plakat = "readyPlayerOne.jpg",
+                            Plakat = "Content/readyPlayerOne.jpg",
                             Rezyser = "Adam Małysz",
                             Tytul = "Ready Palyer One"
                         },
@@ -147,7 +149,7 @@ namespace ASPNET.Migrations
                             DataDodania = new DateTime(2024, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             KategoriaId = 2,
                             Opis = "Film oparty na faktach",
-                            Plakat = "senNaJavie.jpg",
+                            Plakat = "Content/senNaJavie.jpg",
                             Rezyser = "Miłosz Jacoszek",
                             Tytul = "Sen na javie"
                         },
@@ -158,7 +160,7 @@ namespace ASPNET.Migrations
                             DataDodania = new DateTime(2024, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             KategoriaId = 3,
                             Opis = "Film Dokumentalny",
-                            Plakat = "szybcyIWsciekli.jpg",
+                            Plakat = "Content/szybcyIWsciekli.jpg",
                             Rezyser = "Paweł Marciniak",
                             Tytul = "Szybcy i wściekli 21"
                         },
@@ -169,7 +171,7 @@ namespace ASPNET.Migrations
                             DataDodania = new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             KategoriaId = 1,
                             Opis = "Bardzo ciekawy i interesujacy film",
-                            Plakat = "readyPlayerOne.jpg",
+                            Plakat = "Content/readyPlayerOne.jpg",
                             Rezyser = "Adam Małysz",
                             Tytul = "Ready Palyer One"
                         });

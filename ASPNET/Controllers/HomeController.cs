@@ -20,8 +20,8 @@ namespace ASPNET.Controllers
         }
         public IActionResult Index()
         {
-            var kategorie = db.Kategorie.ToList();
-            return View(kategorie);
+            var film = db.Filmy.ToList();
+            return View(film);
         }
 
         public IActionResult Privacy()

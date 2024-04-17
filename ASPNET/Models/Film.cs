@@ -17,6 +17,8 @@ namespace ASPNET.Models
         [Required(ErrorMessage = "Nie podano daty dodania")]
         public DateTime DataDodania { get; set; }
 
+        public string Plakat { get; set; }        
+
         [ForeignKey("Kategoria")]
         public int KategoriaId { get; set; }
         public Kategoria Kategoria { get; set; }
