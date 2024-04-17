@@ -32,5 +32,12 @@ namespace ASPNET.Controllers
             var filmy = kategorie.Filmy.ToList();
             return View(filmy);
         }
+        public IActionResult Szczegoly(int idFilmu)
+        {
+            var film = db.Filmy.Find(idFilmu);
+            var kategoria = db.Kategorie.Find(film.KategoriaId);
+            
+            return View(film);
+        }
     }
 }
