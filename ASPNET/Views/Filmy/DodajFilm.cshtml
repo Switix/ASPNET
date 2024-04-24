@@ -2,10 +2,31 @@
 @{
 }
 
-@using(Html.BeginForm("DodajFilm","Filmy",FormMethod.Post))
+@using(Html.BeginForm("DodajFilm","Filmy",FormMethod.Post, new{enctype = "multipart/form-data"}))
 {
+    <span>Tytuł:</span>
     @Html.TextBoxFor(f=>f.Film.Tytul);
-    @Html.TextBoxFor(f=>f.Film.Opis);
-    @Html.TextBoxFor(f=>f.Film.Rezyser);
-    @Html.TextBoxFor(f=>f.Film.Cena);
+    <br />
+
+    <span>Opis:</span>
+    @Html.TextBoxFor(f => f.Film.Opis);
+    <br />
+
+    <span>Rezyser:</span>
+     @Html.TextBoxFor(f => f.Film.Rezyser);
+    <br />
+
+    <span>Cena:</span>
+    @Html.TextBoxFor(f => f.Film.Cena);
+    <br />
+
+    <span>Plakat:</span>
+    @Html.TextBoxFor(f => f.Plakat, new {@type = "file" });
+    <br />
+
+    @Html.DropDownListFor(f=> f.Film.KategoriaId,new SelectList(Model.Kategorie,"Id","Nazwa" ))
+
+    <button class="btn-danger" type="submit">
+        Dodaj
+    </button>
 }
