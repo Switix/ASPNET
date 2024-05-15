@@ -8,7 +8,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<FilmyContext>(o => o.UseSqlServer(
     builder.Configuration.GetConnectionString("filmyCS"))
 );
-
+builder.Services.AddSession();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -26,6 +26,8 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+
+app.UseSession();
 app.MapControllerRoute(
     name: "StronyStatyczne",
     pattern: "Info/{nazwa}",
