@@ -18,15 +18,13 @@ namespace ASPNET.Controllers
         {
             var koszyk = SessionHelper.GetObjectFromJson<List<ElementKoszyka>>(HttpContext.Session, Consts.KoszykSesja);
 
-            // Check if koszyk is not null
             if (koszyk != null)
             {
                 ViewBag.CalaSuma = koszyk.Sum(f => f.Film.Cena * f.Ilosc);
             }
             else
             {
-                // If koszyk is null, set ViewBag.CalaSuma to 0 or any other default value
-                ViewBag.CalaSuma = 0; // or any other default value
+                ViewBag.CalaSuma = 0; 
             }
 
             return View(koszyk);

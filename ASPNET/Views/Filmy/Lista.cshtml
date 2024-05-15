@@ -10,6 +10,7 @@
             <th>Rezyser</th>
             <th>Opis</th>
             <th>DataDodania</th>
+            <th>Kup</th>
         </tr>
         
     
@@ -23,6 +24,7 @@
             <td>@film.Rezyser</td>
             <td>@film.Opis</td>
             <td>@film.DataDodania</td>
+                <td><a href="@Url.Action("Kup","Koszyk",new{id=@film.Id})">Kup</a></td>
         </tr>
         
     }
