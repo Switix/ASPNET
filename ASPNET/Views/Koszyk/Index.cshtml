@@ -10,24 +10,58 @@
                 <th>Film</th>
                 <th>Ilosc</th>
                 <th>Wartosc</th>
+                <th>Usuń</th>
             </tr>
 
 
-            @foreach (var koszyk in Model)
+            @foreach (var elementKoszyka in Model)
             {
 
-                <tr>
-                    <td>@koszyk.Film.Tytul</td>
-                    <td>@koszyk.Ilosc</td>
-                    <td>@koszyk.Wartosc</td>
+                <tr id="koszykRz-@elementKoszyka.Film.Id">
+                    <td>@elementKoszyka.Film.Tytul</td>
+                    <td>@elementKoszyka.Ilosc</td>
+                    <td>@elementKoszyka.Wartosc</td>
+                    <td><a class="trash" data-id="@elementKoszyka.Film.Id" href=# style="color:red">Usuń</a></td>
                 </tr>
 
             }
         </table>
-        suma: @ViewBag.CalaSuma
+
+        <table class="table">
+            <tr>     
+                <th>Ilosc</th>
+                <th>Suma</th>
+            </tr>
+                <tr>
+                <td>@ViewBag.SumaElementow</td>
+                <td>@ViewBag.CalaSuma</td>
+             </tr>        
+        </table>
+        
+
     </div>
 }
 else
 {
     <div>Koszyk jest pusty</div>
+}
+
+@section Scripts{
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script type="text/javascript">
+    $(".trash").click(function(){
+        var idFilmu = $(this).data('id');
+            if(idFilmu != ''){
+                $.post("/Koszyk/UsunZkoszykaJson",{"id":idFilmu}, function(response){
+                    console.log(response.ilosc);
+                    if(response.ilosc == 0){
+                        $("#koszykRz-"+response.Id).fadeOut("slow");
+                    }
+                    else{
+                        $("#element-" + response.Id).text(response.ilosc)
+                    }
+                });
+            }
+    })    
+    </script>
 }

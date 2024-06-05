@@ -1,7 +1,9 @@
 ﻿using ASPNET.DAL;
 using ASPNET.helpers;
+using ASPNET.Infrastructure;
 using ASPNET.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Reflection.Metadata.Ecma335;
 
 namespace ASPNET.Controllers
 {
@@ -20,10 +22,12 @@ namespace ASPNET.Controllers
 
             if (koszyk != null)
             {
-                ViewBag.CalaSuma = koszyk.Sum(f => f.Film.Cena * f.Ilosc);
+                ViewBag.CalaSuma = koszyk.Sum(f => f.Film.Cena * f.Ilosc); 
+                ViewBag.SumaElementow = MenadzerKoszyka.IlosElemKoszyka(HttpContext.Session);
             }
             else
             {
+                ViewBag.SumaElementow = 0;
                 ViewBag.CalaSuma = 0; 
             }
 
@@ -67,6 +71,39 @@ namespace ASPNET.Controllers
                 SessionHelper.SetObjectAsJson(HttpContext.Session, Consts.KoszykSesja, koszyk);
             }
             return RedirectToAction("Index");
+        }
+
+        public IActionResult UsunZKoszyka(int id)
+        {
+            List<ElementKoszyka> koszyk = SessionHelper.GetObjectFromJson<List<ElementKoszyka>>(HttpContext.Session, Consts.KoszykSesja);
+
+            int index = koszyk.FindIndex(i => i.Film.Id == id); 
+            koszyk.RemoveAt(index);
+
+            SessionHelper.SetObjectAsJson(HttpContext.Session, Consts.KoszykSesja, koszyk);
+            return RedirectToAction("Index");
+
+        }
+
+        public IActionResult UsunZkoszykaJson(int id)
+        {
+            var model = new UsunModelKoszyk()
+            {
+                Id = id,
+                Ilosc = MenadzerKoszyka.UsunZkoszyka(HttpContext.Session, id),
+                WartoscKoszyka = MenadzerKoszyka.IlosElemKoszyka(HttpContext.Session)
+            };
+            return View(model);
+            
+        }
+
+        public async Task<IViewComponentResult> InvokeAsync()
+        {
+
+            ViewBag.SumaElementow = MenadzerKoszyka.IlosElemKoszyka(HttpContext.Session);
+
+
+            return await Task.FromResult((IViewComponentResult)View("_Menu", db.Kategorie.ToList()));
         }
     }
 }
